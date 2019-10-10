@@ -45,8 +45,10 @@ export const ListItem = styled.li`
   p {
     font-size: 16px;
   }
-  a {
+  button {
+    border: 0;
     color: #6b9cde;
     font-size: 14px;
+    text-decoration: underline;
   }
 `;

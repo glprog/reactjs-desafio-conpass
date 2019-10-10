@@ -28,3 +28,10 @@ export function openModal() {
     type: '@hotspot/OPEN_MODAL',
   };
 }
+
+export function deleteHotspot(id) {
+  return {
+    type: '@hotspot/DELETE',
+    payload: id,
+  };
+}

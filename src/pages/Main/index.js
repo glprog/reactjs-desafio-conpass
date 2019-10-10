@@ -2,7 +2,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setTargetFocus } from '../../store/modules/hotspot/actions';
+import {
+  setTargetFocus,
+  deleteHotspot,
+} from '../../store/modules/hotspot/actions';
 
 import {
   Container,
@@ -21,6 +24,10 @@ export default function Main() {
     dispatch(setTargetFocus());
   }
 
+  function handleDelete(id) {
+    dispatch(deleteHotspot(id));
+  }
+
   return (
     <Container>
       <ButtonCreate onClick={handleGetCapture}>Create Hotspot</ButtonCreate>
@@ -31,6 +38,9 @@ export default function Main() {
           {data.map(h => (
             <ListItem key={h.id}>
               <p>Hotspot #{h.id}</p>
+              <button type="submit" onClick={() => handleDelete(h.id)}>
+                Deletar
+              </button>
             </ListItem>
           ))}
         </List>

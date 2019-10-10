@@ -41,6 +41,16 @@ export default function hotspotReducer(state = INITIAL_STATE, action) {
         draft.openModal = true;
         break;
       }
+      case '@hotspot/DELETE':
+        return produce(state, draft => {
+          const hotspotIndex = draft.lists.findIndex(
+            h => h.id === action.payload
+          );
+
+          if (hotspotIndex >= 0) {
+            draft.lists.splice(hotspotIndex, 1);
+          }
+        });
       default:
     }
   });

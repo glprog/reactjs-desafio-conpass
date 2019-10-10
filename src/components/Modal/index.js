@@ -23,6 +23,7 @@ export default function Modal() {
     e.preventDefault();
 
     const id = uniqueId();
+
     const list = { id, title, mouseTarget, elementTarget };
     dispatch(setElementPosition(list));
   }
